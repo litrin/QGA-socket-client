@@ -1,6 +1,7 @@
 import socket
 import json
 
+
 class QGAConnection(object):
     handler = None
 
@@ -18,10 +19,12 @@ class QGAConnection(object):
     def connect(self, filename):
         address = filename
         self.handler = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
+        self.handler.settimeout(1)
+
         self.handler.connect(address)
 
     def recieve(self):
-        result = self.handler.recv(1<<12)
+        result = self.handler.recieve(1024)
         return json.loads(result)
 
     def send(self, command):
