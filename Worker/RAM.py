@@ -1,5 +1,4 @@
 from BaseAgentWorker import BaseQGAAgentWorker
-import re
 from libs.RegexObject import CLIStatus
 
 
