@@ -39,8 +39,6 @@ class Swap(BaseQGAAgentWorker):
         try:
             content = self.fetch('/proc/meminfo')
 
-            reg = lambda a, b : int(re.search(a + r":\W+(\d+)", b).group(1))
-
             return {'total': self._reg_compile['total'].getInt(content),
                     'free': self._reg_compile['free'].getInt(content)}
         except:
