@@ -1,6 +1,6 @@
 from BaseAgentWorker import BaseQGAAgentWorker
 import re
-from lib.RegexObject import CLIStatus
+from libs.RegexObject import CLIStatus
 
 
 class Swap(BaseQGAAgentWorker):
